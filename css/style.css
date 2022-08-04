@@ -1,0 +1,487 @@
+:root {
+  --green: #00e77f;
+  --white: #fff;
+  --light-white: #aaa;
+  --black: #3d3d3d;
+  --light-bg: #4b4b4b;
+}
+
+* {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+}
+
+*::selection {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+
+body {
+  background: var(--black);
+}
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 3rem;
+}
+/* Reused Property */
+section {
+  padding: 2rem 7%;
+}
+.btn {
+  color: var(--white);
+  font-size: 2rem;
+  background: var(--light-bg);
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  display: inline-block;
+}
+.btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+.heading,
+span {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: center;
+}
+.heading span {
+  color: var(--green);
+}
+/* Header Start  */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 2rem 7%;
+  background: var(--light-bg);
+}
+.header .logo {
+  font-size: 2.5rem;
+  color: var(--white);
+}
+.header .logo span {
+  color: var(--green);
+}
+.header .nav-bar a {
+  color: var(--light-white);
+  font-size: 2rem;
+  padding: 1rem;
+}
+.header .nav-bar a:hover {
+  color: var(--green);
+}
+.header .fa-bars {
+  font-size: 2.5rem;
+  color: var(--white);
+  display: none;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .header .fa-bars {
+    display: block;
+  }
+  .header .nav-bar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    border-top: 0.1rem solid var(--light-white);
+    border-bottom: 0.1rem solid var(--light-white);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .nav-bar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .nav-bar a {
+    display: block;
+  }
+  .fa-times {
+    transform: rotate(180deg);
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+/* Header End  */
+/* <-------------------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------------------> */
+/* Home Section Start  */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 6rem;
+}
+.home .content {
+  padding: 2rem 0;
+  text-align: center;
+  flex: 1 1 30rem;
+  width: 100%;
+}
+.home .image {
+  flex: 1 1 40rem;
+}
+.home .image img {
+  width: 100%;
+}
+.home .content h3 {
+  font-size: 10rem;
+  line-height: 1;
+  color: #fff;
+}
+.home .content span {
+  font-size: 10rem;
+  color: var(--green);
+}
+.home .content .btn {
+  margin-top: 2rem;
+}
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+.icons .box {
+  display: flex;
+  align-items: center;
+
+  background: var(--light-bg);
+  padding: 2rem 7rem;
+  border-radius: 0.5rem;
+}
+.icons .box i {
+  font-size: 5rem;
+  color: var(--green);
+}
+.icons .box .home-content {
+  padding-left: 2rem;
+}
+.icons .box .home-content h3 {
+  font-size: 2rem;
+  color: var(--white);
+  padding-bottom: 0.5rem;
+}
+.icons .box .home-content span {
+  font-size: 1.5rem;
+  color: var(--light-white);
+}
+@media (max-width: 991px) {
+  .icons {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media (max-width: 1200px) {
+  .home {
+    padding: 2rem;
+    flex-wrap: wrap-reverse;
+  }
+  .home .content {
+    padding-top: 2rem;
+  }
+  .home .content h3 {
+    font-size: 6rem;
+  }
+  .home .content h3 span {
+    font-size: 6rem;
+  }
+}
+/* Home Section End  */
+/* <-------------------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------------------> */
+/* About Section Start  */
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.about .image {
+  flex: 1 1 35rem;
+}
+.about .image img {
+  width: 100%;
+}
+.about .about-content {
+  text-align: center;
+  width: 100%;
+  flex: 1 1 35rem;
+  padding: 4rem 0;
+}
+.about .about-content h3 {
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.about .about-content p {
+  color: var(--light-white);
+  font-size: 1.7rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+/* About Section End  */
+/* <-------------------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------------------> */
+/* courses Section Start  */
+.courses .slide {
+  margin-top: 2rem;
+  background: var(--light-bg);
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  text-align: center;
+}
+.courses .slide img {
+  height: 25rem;
+}
+.courses .slide .content h3 {
+  color: var(--white);
+  font-size: 2rem;
+}
+.courses .slide .content p {
+  margin: 1.5rem 0;
+  color: var(--light-white);
+  font-size: 1.6rem;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  background-color: var(--white);
+}
+.swiper-pagination-clickable .swiper-pagination-bullet-active {
+  background-color: var(--green);
+}
+/* courses Section End */
+/* <-------------------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------------------> */
+/* Teachers Section Start  */
+.teachers .slide {
+  position: relative;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+.teachers .slide .social-icons {
+  position: absolute;
+  top: 1rem;
+  left: -10rem;
+  z-index: 1;
+}
+.teachers .slide .social-icons a {
+  color: var(--black);
+  background-color: var(--white);
+  text-align: center;
+  border-radius: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4.5rem;
+  display: block;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+.teachers .slide img {
+  height: 55rem;
+  object-fit: cover;
+  width: 100%;
+}
+.teachers .slide .social-icons a:hover {
+  color: var(--white);
+  background-color: var(--green);
+}
+.teachers .slide:hover .social-icons {
+  left: 2rem;
+}
+.teachers .slide h3 {
+  text-align: center;
+  color: var(--white);
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+/* Teachers Section End  */
+/* <-------------------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------------------> */
+/* Review Section Start  */
+.review .slide {
+  padding: 2rem;
+  background-color: var(--light-bg);
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.review .slide p {
+  font-size: 1.5rem;
+  color: var(--light-white);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.review .slide .content {
+  display: flex;
+  align-items: center;
+}
+.review .slide .content img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+
+.review .slide .content h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.review .slide .content .stars {
+  font-size: 1.5rem;
+  color: var(--green);
+  padding-left: 2rem;
+  display: block;
+}
+/* Review Section End  */
+/* <-------------------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------------------> */
+/* Contact Section Start */
+.contact .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.contact .row .image {
+  flex: 1 1 40rem;
+}
+.contact .row .image img {
+  width: 100%;
+}
+.contact .row form {
+  flex: 1 1 35rem;
+  width: 100%;
+}
+.contact .row form .box {
+  width: 100%;
+  color: var(--white);
+  height: 4rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background: var(--light-bg);
+}
+.contact .row form label {
+  font-size: 1.5rem;
+  color: var(--light-white);
+  display: block;
+  margin-bottom: 1rem;
+}
+.contact .row form select option {
+  width: 100%;
+  position: relative;
+}
+.contact .row form .radio {
+  margin-bottom: 2rem;
+}
+.contact .row form .radio label {
+  display: inline;
+}
+.contact .row form .radio input {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--white);
+  cursor: pointer;
+}
+.contact .row form .radio input:checked {
+  background-color: var(--green);
+  border-radius: 5rem;
+}
+.contact .row form .radio #female {
+  margin-left: 2rem;
+}
+.contact .row form .radio #female:checked ~ label[for="female"] {
+  color: var(--green);
+}
+.contact .row form .radio #male:checked ~ label[for="male"] {
+  color: var(--green);
+}
+/* Contact Section End */
+/* <-------------------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------------------> */
+.footer {
+  padding: 2rem 7%;
+  background-color: var(--light-bg);
+}
+
+.footer .share {
+  text-align: center;
+  color: var(--white);
+  padding-right: 3rem;
+  margin-bottom: 3rem;
+}
+.footer .share a {
+  text-align: center;
+  margin: 0 0.3rem;
+  font-size: 2.3rem;
+  color: var(--white);
+  padding: 1.1rem;
+  background: var(--black);
+  border-radius: 50%;
+}
+.footer .share a:hover {
+  color: var(--white);
+  background: var(--green);
+}
+.footer h3 {
+  text-align: center;
+  border-top: 0.1rem solid var(--light-white);
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--light-white);
+  font-weight: normal;
+  line-height: 1.8;
+}
+.footer h3 span {
+  font-size: 2rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: var(--green);
+}
